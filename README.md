@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # my-project
 
 > Vue Test
@@ -19,3 +20,7 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# kec-web-front-end
+web front-end written by vue.js
+>>>>>>> 95745e587092429b081d790da967c3eae76e14ee
