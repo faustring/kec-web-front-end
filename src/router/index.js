@@ -8,6 +8,7 @@ Vue.use(Router);
 Vue.use(Head);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/hello',
