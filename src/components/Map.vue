@@ -16,7 +16,10 @@ export default {
   },
   head: {
     script: [
-      { type: 'text/javascript', href: 'https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kuDmh2FluSU7OTRRY6c1' },
+      {
+        type: 'text/javascript',
+        src: 'https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kuDmh2FluSU7OTRRY6c1',
+      },
     ],
   },
   mounted() {
