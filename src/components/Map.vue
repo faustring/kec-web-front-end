@@ -1,6 +1,6 @@
 <template>
-  <div class="map">
-    <h1>{{ msg }}</h1>
+  <div class="map"
+       ref="map">
     <div id="map">
     </div>
   </div>
@@ -22,10 +22,11 @@ export default {
       },
     ],
   },
-  mounted() {
-    const mapDiv = this.$refs.map;
-    const map = new window.naver.maps.Map(mapDiv);
-    map.setOptions('mapTypeControl', true);
+  created() {
+    window.onload = () => {
+      const map = new window.naver.maps.Map(this.$refs.map);
+      map.setOptions('mapTypeControl', true);
+    };
   },
 };
 

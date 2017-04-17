@@ -1,19 +1,41 @@
 <template>
   <div id="app">
     <div id="topBar">
-      <div id="logo">K.E.C</div>
+      <router-link to="/">
+        <div id="logo">K.E.C</div>
+      </router-link>
       <div id="masterMenu">
-        <span>나의 정보</span>
-        <span>로그인</span>
+        <router-link to="/mypage"
+                     v-if="val.login">
+          <span>나의 정보</span>
+        </router-link>
+        <span v-on:click="login()">로그인</span>
       </div>
     </div>
     <div id="boxWrap">
-      <div class="box"><span>지도</span></div>
-      <div class="box"><span>지도</span></div>
-      <div class="box"><span>지도</span></div>
-      <div class="box"><span>지도</span></div>
-      <router-view></router-view>
+      <router-link to="/map">
+        <div class="box">
+          지도
+        </div>
+      </router-link>
+      <router-link to="/rank">
+        <div class="box">
+          랭킹
+        </div>
+      </router-link>
+      <router-link to="/list">
+        <div class="box">
+          리스트
+        </div>
+      </router-link>
+      <router-link to="/map">
+        <div class="box">
+          지도
+        </div>
+      </router-link>
     </div>
+    <router-view id="router"></router-view>
+  
   </div>
 </template>
 
@@ -21,6 +43,12 @@
 export default {
   name: 'app',
 };
+const val = {
+  login: false,
+};
+function login() {
+  val.login = !val.login;
+}
 </script>
 
 <style>
@@ -48,24 +76,77 @@ export default {
 #topBar {
   background-color: #192b50;
   opacity: 0.7;
-  height: 30px;
+  height: 40px;
+}
+
+
+#boxWrap {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 480px) {
+  .box {
+    width: 110px;
+    height: 110px
+  }
+  #boxWrap {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .box {
+    height: 100px;
+  }
+  #boxWrap {
+    flex-direction: column;
+    width: 100px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .box {}
+  #boxWrap {
+    flex-direction: column;
+    width: 100px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.box {
+  background-color: #4576DC;
+  opacity: 0.8;
+  border-radius: 15px;
+  color: #769C29;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 #boxWrap {
   float: left;
-  width: 100px;
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: #4576DC;
-  opacity: 0.8;
-  border-radius: 15px;
-  margin-top: 5px;
-  color: #769C29;
-  text-align: center;
+
+
+
+#router {
+  height: 700px;
+  margin: 20px;
 }
+
+
 
 html,
 body {

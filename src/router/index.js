@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Head from 'vue-head';
 import Router from 'vue-router';
-import Hello from '@/components/Hello';
 import Map from '@/components/Map';
 
 Vue.use(Router);
@@ -11,11 +10,19 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/hello',
-      component: Hello,
+      path: '/',
+      component: Map,
     },
     {
-      path: '/map',
+      path: '/rank',
+      component: Map,
+    },
+    {
+      path: '/list',
+      component: Map,
+    },
+    {
+      path: '/login',
       component: Map,
     },
   ],
