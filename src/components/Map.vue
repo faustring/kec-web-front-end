@@ -22,7 +22,7 @@ export default {
       },
     ],
   },
-  created() {
+  mounted() {
     window.onload = () => {
       const map = new window.naver.maps.Map(this.$refs.map);
       map.setOptions('mapTypeControl', true);

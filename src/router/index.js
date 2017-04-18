@@ -14,15 +14,15 @@ export default new Router({
       component: Map,
     },
     {
+      path: '/map',
+      component: Map,
+    },
+    {
       path: '/rank',
       component: Map,
     },
     {
       path: '/list',
-      component: Map,
-    },
-    {
-      path: '/login',
       component: Map,
     },
   ],

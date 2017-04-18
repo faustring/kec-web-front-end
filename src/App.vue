@@ -9,7 +9,9 @@
                      v-if="val.login">
           <span>나의 정보</span>
         </router-link>
-        <span v-on:click="login()">로그인</span>
+        <button class="btn btn-default"
+                type="button"
+                v-on:click="login">로그인</button>
       </div>
     </div>
     <div id="boxWrap">
@@ -35,20 +37,43 @@
       </router-link>
     </div>
     <router-view id="router"></router-view>
-  
+    <div class="modal fade bs-example-modal-sm"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="mySmallModalLabel"
+         id="loginModal">
+      <div class="modal-dialog modal-sm"
+           role="document">
+        <div class="modal-content">
+          asdfasdfsdaf
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import * as jQuery from 'jquery';
+
 export default {
   name: 'app',
+  data() {
+    return {
+      val: {
+        login: false,
+      },
+      layer: {
+        login: false,
+      },
+    };
+  },
+  methods: {
+    login() {
+      console.log('text');
+      jQuery('#loginModal').show();
+    },
+  },
 };
-const val = {
-  login: false,
-};
-function login() {
-  val.login = !val.login;
-}
 </script>
 
 <style>
